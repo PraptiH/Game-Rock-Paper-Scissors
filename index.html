@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>Document</title>
+    <style>
+        *{
+            text-align: center;
+            background-color: #ffe4c4;
+        }
+        img{
+            width: 15%;
+            border-radius: 100%
+        }
+        button{
+            background-color: #ed9d63ed;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="font-bold text-5xl my-[5%]">Rock Paper Scissors</h1>
+    <div class="flex items-center justify-center gap-[5%]">
+        <img src="./assets/rock.webp" alt="">
+        <img src="./assets/paper.jpg" alt="">
+        <img src="./assets/scissor.jpg" alt="">
+    </div>
+
+    <div id="scoreBoard" class="flex items-center justify-center gap-[10%] my-[5%]">
+        <div>
+            <p class="font-bold text-7xl">0</p>
+            <p class="font-semibold text-5xl">You</p>
+        </div>
+        <div>
+            <p class="font-bold text-7xl">0</p>
+            <p class="font-semibold text-5xl">Computer</p>
+        </div>
+
+    </div>
+
+    <button class="px-[5%] py-[2%] rounded-xl font-medium text-3xl">Play Your Move</button>
+</body>
+</html>
