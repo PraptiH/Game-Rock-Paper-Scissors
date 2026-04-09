@@ -1,11 +1,13 @@
-let userScore = 0;
-let computerScore = 0;
+let userScore = 0
+let computerScore=0 
+let userScoreId = document.getElementById("userScore");
+let computerScoreId = document.getElementById("computerScore");
+
 let userWin = true
 let message = document.getElementById("message")
 let selects = document.querySelectorAll('.select')
 selects.forEach(select => {
     select.addEventListener('click', () => {
-        console.log('click')
         const userChoice = select.getAttribute("id")
         playGame(userChoice)
     })
@@ -17,9 +19,7 @@ const generateComputerChoice = () => {
 
 }
 const playGame = (userChoice) => {
-    console.log("user", userChoice)
     const computerChoice = generateComputerChoice()
-    console.log("comupter", computerChoice)
 
     if (userChoice === 'rock') {
         userWin = computerChoice === "paper" ? false : true
@@ -36,13 +36,18 @@ const playGame = (userChoice) => {
 const showWinner = (userWin, userChoice, computerChoice) => {
      if (userChoice === computerChoice) {
         message.innerText = `It's a draw. Play again`
+        message.style.backgroundColor="#ed9d63ed"
     }
     else if (userWin) {
         message.innerText = `Your ${userChoice} win against ${computerChoice}.`
+        userScore++
+        userScoreId.innerText=userScore
         message.style.backgroundColor="green"
     }
     else {
         message.innerText = `Your ${userChoice} lose against ${computerChoice}.`
+        computerScore++
+        computerScoreId.innerText= computerScore
         message.style.backgroundColor="red"
     }
 }
